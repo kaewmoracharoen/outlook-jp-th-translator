@@ -1,58 +1,197 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://appsforoffice.microsoft.com https://kaewmoracharoen.github.io; script-src 'self' 'unsafe-inline' https://appsforoffice.microsoft.com https://kaewmoracharoen.github.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;">
+    <title>เครื่องมือแปลภาษา</title>
+    
+    <!-- Inline CSS เพื่อหลีกเลี่ยง CSP issues -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 15px;
+            background-color: #f3f2f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #content-main {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #0078D4;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #323130;
+        }
+
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #c8c6c4;
+            border-radius: 2px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .ms-Button {
+            background-color: #0078D4;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 2px;
+            min-width: 120px;
+        }
+
+        .ms-Button:hover {
+            background-color: #005a9e;
+        }
+
+        .padding {
+            margin-bottom: 15px;
+        }
+
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+    
+    <!-- Office.js library -->
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;เครื่องมือแปลภาษา&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="taskpane.css" type="text/css" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body style="display:flex; flex-direction:column; align-items:center; padding: 20px;"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="content-main"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;เครื่องมือแปลภาษา (ทดสอบ)&lt;/h1&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="originalText"&gt;ข้อความต้นฉบับ (จากอีเมล):&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea id="originalText" rows="5" style="width: 95%; margin-bottom: 10px;" readonly&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="btnGetEmailContent" class="ms-Button"&gt;ดึงเนื้อหาอีเมล&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="inputText"&gt;หรือป้อนข้อความที่นี่:&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea id="inputText" rows="5" style="width: 95%; margin-bottom: 10px;"&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="btnTranslateJPtoTH" class="ms-Button"&gt;แปล ญี่ปุ่น -&gt; ไทย&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="btnTranslateTHtoJPEN" class="ms-Button"&gt;แปล ไทย -&gt; ญี่ปุ่น/อังกฤษ&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="translatedText"&gt;ผลการแปล:&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea id="translatedText" rows="7" style="width: 95%;" readonly&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="text/javascript" src="taskpane.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <div id="content-main">
+        <h1>เครื่องมือแปลภาษา JP-TH</h1>
+        
+        <div class="status" id="statusMessage">
+            Add-in โหลดสำเร็จ! พร้อมใช้งาน
+        </div>
+        
+        <div class="padding">
+            <label for="originalText">ข้อความต้นฉบับ (จากอีเมล):</label>
+            <textarea id="originalText" rows="5" readonly></textarea>
+        </div>
+
+        <div class="padding">
+            <button id="btnGetEmailContent" class="ms-Button">ดึงเนื้อหาอีเมล</button>
+        </div>
+        
+        <div class="padding">
+            <label for="inputText">หรือป้อนข้อความที่นี่:</label>
+            <textarea id="inputText" rows="5"></textarea>
+        </div>
+
+        <div class="padding">
+            <button id="btnTranslateJPtoTH" class="ms-Button">แปล ญี่ปุ่น → ไทย</button>
+            <button id="btnTranslateTHtoJPEN" class="ms-Button">แปล ไทย → ญี่ปุ่น</button>
+        </div>
+
+        <div class="padding">
+            <label for="translatedText">ผลการแปล:</label>
+            <textarea id="translatedText" rows="7" readonly></textarea>
+        </div>
+    </div>
+
+    <!-- Inline JavaScript เพื่อหลีกเลี่ยง CSP issues -->
+    <script>
+        console.log('Add-in starting...');
+        
+        // รอให้ Office.js โหลด
+        Office.onReady(function(info) {
+            console.log('Office.onReady called. Host:', info.host);
+            
+            document.getElementById('statusMessage').textContent = 
+                'Office.js โหลดสำเร็จ! Host: ' + (info.host || 'Unknown');
+            
+            initializeButtons();
+        });
+
+        function initializeButtons() {
+            console.log('Initializing buttons...');
+            
+            const btnGetEmail = document.getElementById("btnGetEmailContent");
+            const btnTranslateJPTH = document.getElementById("btnTranslateJPtoTH");
+            const btnTranslateTHJP = document.getElementById("btnTranslateTHtoJPEN");
+            
+            if (btnGetEmail) {
+                btnGetEmail.onclick = getEmailContent;
+            }
+            
+            if (btnTranslateJPTH) {
+                btnTranslateJPTH.onclick = function() { translateText('jp_to_th'); };
+            }
+            
+            if (btnTranslateTHJP) {
+                btnTranslateTHJP.onclick = function() { translateText('th_to_jp_en'); };
+            }
+            
+            console.log('All buttons initialized!');
+        }
+
+        function getEmailContent() {
+            console.log('Getting email content...');
+            
+            // ใส่ข้อความตัวอย่าง
+            const content = "นี่คือเนื้อหาอีเมลตัวอย่าง\n\nこんにちは、これはテストメッセージです。\nHello, this is a test message.";
+            
+            document.getElementById("originalText").value = content;
+            document.getElementById("inputText").value = content;
+            
+            console.log('Email content set (simulated)');
+        }
+
+        function translateText(direction) {
+            console.log('Translating:', direction);
+            
+            const inputText = document.getElementById("inputText").value;
+            if (!inputText.trim()) {
+                document.getElementById("translatedText").value = "กรุณาป้อนข้อความที่ต้องการแปล";
+                return;
+            }
+
+            // แสดง loading
+            document.getElementById("translatedText").value = "กำลังแปล...";
+            
+            // จำลองการแปล
+            setTimeout(() => {
+                let result = "";
+                if (direction === 'jp_to_th') {
+                    result = `✅ แปลจากญี่ปุ่นเป็นไทย:\n\n"${inputText}"\n\n→ นี่คือผลการแปลจำลอง (ญี่ปุ่น → ไทย)\n\n[ในการใช้งานจริง จะเชื่อมต่อ API แปลภาษา]`;
+                } else {
+                    result = `✅ แปลจากไทยเป็นญี่ปุ่น:\n\n"${inputText}"\n\n→ これは模擬翻訳結果です (タイ語 → 日本語)\n\n[ในการใช้งานจริง จะเชื่อมต่อ API แปลภาษา]`;
+                }
+                
+                document.getElementById("translatedText").value = result;
+                console.log('Translation completed');
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
